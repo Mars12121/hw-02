@@ -85,7 +85,6 @@ sudo -u postgres createdb -O zabbix zabbix
 4. Приложите в файл README.md текст использованных команд в GitHub
 
 Для учтановки Zabbix-agenta воспользуемся командами:
-```
 Добавьте репозиторий Zabbix:
 ```
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bdebian11_all.deb 
