@@ -84,7 +84,33 @@ sudo -u postgres createdb -O zabbix zabbix
 3. Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 4. Приложите в файл README.md текст использованных команд в GitHub
 
+Для учтановки Zabbix-agenta воспользуемся командами:
+```
+Добавьте репозиторий Zabbix:
+```
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bdebian11_all.deb 
+dpkg -i zabbix-release_6.0-4+debian11_all.deb 
+apt update
+```
+Установите Zabbix agent и компоненты:
+```
+sudo apt install zabbix-agent -y
+```
+Меняем адрес сервера в конфиге агента:
+```
+sed -i 's/Server=127.0.0.1/Server=10.130.0.25/g' /etc/zabbix/zabbix_agentd.conf
+```
+Запустите Zabbix agent:
+```
+sudo systemctl restart zabbix-agent 
+sudo systemctl enable zabbix-agent
+```
+![alt text](https://github.com/Mars12121/hw-02/blob/main/img/2.png)
+![alt text](https://github.com/Mars12121/hw-02/blob/main/img/3.png)
+![alt text](https://github.com/Mars12121/hw-02/blob/main/img/4.png)
+![alt text](https://github.com/Mars12121/hw-02/blob/main/img/5.png)
 ---
+
 ## Задание 3 со звёздочкой*
 Установите Zabbix Agent на Windows (компьютер) и подключите его к серверу Zabbix.
 
