@@ -105,6 +105,8 @@ sed -i 's/Server=127.0.0.1/Server=10.130.0.25/g' /etc/zabbix/zabbix_agentd.conf
 sudo systemctl restart zabbix-agent 
 sudo systemctl enable zabbix-agent
 ```
+
+
 ![alt text](https://github.com/Mars12121/hw-02/blob/main/img/2.png)
 ![alt text](https://github.com/Mars12121/hw-02/blob/main/img/3.png)
 ![alt text](https://github.com/Mars12121/hw-02/blob/main/img/4.png)
